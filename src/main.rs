@@ -22,7 +22,6 @@ pub use filetype::HighlightingOptions;
 pub use row::Row;
 pub use terminal::Terminal;
 
-
 fn main() {
     Editor::default().run();
 }
