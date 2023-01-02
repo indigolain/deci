@@ -404,3 +404,14 @@ fn die(e: std::io::Error) {
   Terminal::clear_screen();
   panic!("{:?}", e);
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  #[should_panic]
+  fn test_die() {
+    die(std::io::Error::new(std::io::ErrorKind::Other, "test"));
+  }
+}
